@@ -18,11 +18,11 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'scampy'
-copyright = '2020, tbc'
+#copyright = '2020'
 author = 'Angus Bridges'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1dev'
+release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
