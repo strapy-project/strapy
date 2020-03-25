@@ -19,7 +19,7 @@ monochromatic light through networks of planar optical components.
 [1] A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, awaiting publication.
 
 Citing scampy
-------------
+-------------
 
 If you find an interesting application for `scampy` please let us know. If you
 want to cite results found using `scampy` please cite the accompanying
