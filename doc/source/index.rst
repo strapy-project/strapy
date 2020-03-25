@@ -11,6 +11,7 @@ scampy documentation
    introduction
    usage/installation
    usage/quick_start
+   api_doc/api_documentation
 
 Indices and tables
 ==================
