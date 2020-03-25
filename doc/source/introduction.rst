@@ -26,7 +26,7 @@ want to cite results found using `scampy` please cite the accompanying
 publication and the software DOI:
 
     * A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, awaiting publication
-    * Cranfield University research data repository - 10.17862/cranfield.rd.12001236
+    * Cranfield University research data repository - `10.17862/cranfield.rd.12001236 <https://doi.org/10.17862/cranfield.rd.12001236>`_
 
 Licencing
 ---------

@@ -9,6 +9,8 @@ scampy documentation
    :caption: Contents:
 
    introduction
+   usage/installation
+   usage/quick_start
 
 Indices and tables
 ==================
