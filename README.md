@@ -10,6 +10,8 @@ leakage within the optics of homodyne displacement measuring interferometers,
 however `scampy` is generally applicable to modelling the propagation of
 monochromatic light through networks of planar optical components.
 
+Full documentation is available at [scampy-project.readthedocs.io](https://scampy-project.readthedocs.io/)
+
 [1] A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, awaiting publication.
 
 # Citing scampy
