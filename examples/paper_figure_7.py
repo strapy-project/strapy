@@ -9,7 +9,7 @@
 import numpy as np
 import matplotlib as mpl
 from matplotlib import pyplot as plt
-import scampy as ts
+import strapy as ts
 import pyctmm
 
 model = ts.Model()

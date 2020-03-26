@@ -1,9 +1,9 @@
 import setuptools
 
 setuptools.setup(
-    name='scampy',
+    name='strapy',
     version='1.0.0',
-    packages=['scampy'],
+    packages=['strapy'],
     license=['MIT'],
     install_requires=[
           'numpy',

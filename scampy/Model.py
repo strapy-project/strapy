@@ -11,7 +11,7 @@ class Model:
     """Defines the optical network to be modelled.
 
     The Model class holds the information that defines the structure of the
-    optical network to be modelled with scampy, along with functions for
+    optical network to be modelled with strapy, along with functions for
     building and evaluating the model. In general only the `wavelength`
     attribute should be accessed directly by the user - all other attributes
     should be set through the member functions.
@@ -63,7 +63,7 @@ class Model:
 
         Parameters
         ----------
-        component : scampy.components.component
+        component : strapy.components.component
                 Type of component to be added.
         name : str
                 Unique name of component.
@@ -101,7 +101,7 @@ class Model:
         """Adds detector to model and updates list of nodes.
 
         For details on currently implemented properties see
-        :py:class:`scampy.Detector()`.
+        :py:class:`strapy.Detector()`.
 
         Parameters
         ----------
@@ -111,7 +111,7 @@ class Model:
                 Node monitored by detector.
         properties : tuple of str
                 Optical properties to be logged - see
-                :py:class:`scampy.Detector()` for current options.
+                :py:class:`strapy.Detector()` for current options.
         """
 
         node = (node,)

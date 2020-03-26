@@ -1,5 +1,5 @@
 Model
 =================================
 
-.. automodule:: scampy.Model
+.. automodule:: strapy.Model
    :members:

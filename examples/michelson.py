@@ -1,5 +1,5 @@
 import numpy as np
-import scampy
+import strapy
 
 try:
     from matplotlib import pyplot as plt
@@ -18,19 +18,19 @@ except:
         print("matplotlib is still not installed, exiting.\n")
         exit()
 
-model = scampy.Model()
+model = strapy.Model()
 
-model.add_component(scampy.components.Source, 'laser', 'n0')
-model.add_component(scampy.components.BeamSplitter, 'BS', ('n1', 'n2', 'n3', 'n4'))
-model.add_component(scampy.components.Mirror, 'Mmes', 'n5')
-model.add_component(scampy.components.Mirror, 'Mref', 'n6')
-model.add_component(scampy.components.Polariser, 'pol', ('n7', 'n8'))
-model.add_component(scampy.components.Stack, 's01', ('n0', 'n1'))
-model.add_component(scampy.components.Stack, 's35', ('n3', 'n5'))
-model.add_component(scampy.components.Stack, 's26', ('n2', 'n6'))
-model.add_component(scampy.components.Stack, 's47', ('n4', 'n7'))
-model.add_component(scampy.components.Stack, 's89', ('n8', 'n9'))
-model.add_component(scampy.components.Dump, 'd9', 'n9')
+model.add_component(strapy.components.Source, 'laser', 'n0')
+model.add_component(strapy.components.BeamSplitter, 'BS', ('n1', 'n2', 'n3', 'n4'))
+model.add_component(strapy.components.Mirror, 'Mmes', 'n5')
+model.add_component(strapy.components.Mirror, 'Mref', 'n6')
+model.add_component(strapy.components.Polariser, 'pol', ('n7', 'n8'))
+model.add_component(strapy.components.Stack, 's01', ('n0', 'n1'))
+model.add_component(strapy.components.Stack, 's35', ('n3', 'n5'))
+model.add_component(strapy.components.Stack, 's26', ('n2', 'n6'))
+model.add_component(strapy.components.Stack, 's47', ('n4', 'n7'))
+model.add_component(strapy.components.Stack, 's89', ('n8', 'n9'))
+model.add_component(strapy.components.Dump, 'd9', 'n9')
 
 model.add_detector('PD1', 'n9', ('amplitude', 'intensity'))
 

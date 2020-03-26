@@ -2,7 +2,7 @@ import sympy as sp
 
 
 class Node:
-    """A node in a scampy optical network.
+    """A node in a strapy optical network.
 
     An instance of the `Node` class is created for each node added to a
     model. Nodes track the attached components, and hold the sympy symbols

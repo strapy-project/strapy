@@ -1,5 +1,5 @@
 Node
 =================================
 
-.. automodule:: scampy.Node
+.. automodule:: strapy.Node
    :members:

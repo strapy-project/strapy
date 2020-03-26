@@ -2,7 +2,7 @@ Components
 =================================
 
 The components module holds all optical components currently defined in
-scampy. Each scampy optical component is defined in a separate class, and must
+strapy. Each strapy optical component is defined in a separate class, and must
 inherit at least from the `_Component` class, and optionally from the
 `_ScatterComponent` or `_TransferComponent` class.
 
@@ -32,75 +32,75 @@ case. In the long term placing individual components in their own file is
 probably a better approach as well.
 
 .. autosummary::
-    scampy.components.BeamSplitter
-    scampy.components.Dump
-    scampy.components.FaradayRotator
-    scampy.components.IdealIsolator
-    scampy.components.Mirror
-    scampy.components.Polariser
-    scampy.components.PolarisingBeamSplitter
-    scampy.components.Reflector
-    scampy.components.Source
-    scampy.components.Stack
-    scampy.components.Waveplate
+    strapy.components.BeamSplitter
+    strapy.components.Dump
+    strapy.components.FaradayRotator
+    strapy.components.IdealIsolator
+    strapy.components.Mirror
+    strapy.components.Polariser
+    strapy.components.PolarisingBeamSplitter
+    strapy.components.Reflector
+    strapy.components.Source
+    strapy.components.Stack
+    strapy.components.Waveplate
 
 Beam splitter
 ------
-.. autoclass:: scampy.components.BeamSplitter
+.. autoclass:: strapy.components.BeamSplitter
     :members:
 
 Dump
 ------
-.. autoclass:: scampy.components.Dump
+.. autoclass:: strapy.components.Dump
     :members:
 
 Faraday rotator
 ------
-.. autoclass:: scampy.components.FaradayRotator
+.. autoclass:: strapy.components.FaradayRotator
     :members:
 
 Ideal isolator
 ------
-.. autoclass:: scampy.components.IdealIsolator
+.. autoclass:: strapy.components.IdealIsolator
     :members:
 
 Mirror
 ------
-.. autoclass:: scampy.components.Mirror
+.. autoclass:: strapy.components.Mirror
     :members:
 
 Polariser
 ------
-.. autoclass:: scampy.components.Polariser
+.. autoclass:: strapy.components.Polariser
     :members:
 
 Polarising beam splitter
 ------
-.. autoclass:: scampy.components.PolarisingBeamSplitter
+.. autoclass:: strapy.components.PolarisingBeamSplitter
     :members:
 
 Reflector
 ------
-.. autoclass:: scampy.components.Reflector
+.. autoclass:: strapy.components.Reflector
     :members:
 
 Source
 ------
-.. autoclass:: scampy.components.Source
+.. autoclass:: strapy.components.Source
     :members:
 
 Stack
 ------
-.. autoclass:: scampy.components.Stack
+.. autoclass:: strapy.components.Stack
     :members:
 
 Waveplate
 ------
-.. autoclass:: scampy.components.Waveplate
+.. autoclass:: strapy.components.Waveplate
     :members:
 
 Utility functions
 -----------------
-.. automethod:: scampy.components.rotationMatrix44
-.. automethod:: scampy.components.rotationMatrix88
+.. automethod:: strapy.components.rotationMatrix44
+.. automethod:: strapy.components.rotationMatrix88
 

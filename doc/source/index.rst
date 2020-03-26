@@ -2,7 +2,7 @@
 
     <br />
 
-scampy documentation
+strapy documentation
 ====================
 .. toctree::
    :maxdepth: 2

@@ -1,12 +1,12 @@
 Getting started
 =================================
 
-`scampy` was designed primarily for modelling displacement measuring optical
+`strapy` was designed primarily for modelling displacement measuring optical
 interferometers. This guide is intended to give a brief introduction to using
-`scampy` for modelling a simple Michelson interferometer, shown in figure 1, and
+`strapy` for modelling a simple Michelson interferometer, shown in figure 1, and
 should provide a starting point for modelling other more complex optical
 systems. Python scripts implementing the example described here may be found in
-the `examples` folder of the `scampy` GitHub repository. To run this example code
+the `examples` folder of the `strapy` GitHub repository. To run this example code
 `matplotlib` will need to be installed (:code:`pip install matplotlib`). Further
 examples can be found in the `tests` folder.
 
@@ -15,28 +15,28 @@ examples can be found in the `tests` folder.
     :alt: Schematic of Michelson interferometer.
 
     Figure 1: schematic of a simple Michelson interferometer with nodes used for
-    `scampy` modelling labeled. Beam splitter, `BS`; reference mirror `Mref`;
+    `strapy` modelling labeled. Beam splitter, `BS`; reference mirror `Mref`;
     moving measurement mirror `Mmes`; linear polariser `Pol`; photodiode `PD1`.
 
-As can be seen in figure 1, `scampy` describes optical systems as a network of
+As can be seen in figure 1, `strapy` describes optical systems as a network of
 interconnected nodes. The interferometer shown is linked together with 10 nodes,
 with counter propagating electric field components defined at each node.
 
-Once installed scampy, along with the numpy and matplotlib libraries, can be
+Once installed strapy, along with the numpy and matplotlib libraries, can be
 imported, and an empty model initialised with ::
 
     import numpy as np
     from matplotlib import pyplot as plt
-    import scampy
+    import strapy
 
-    model = scampy.Model()
+    model = strapy.Model()
 
 
 The `Model` instance defines the structure of the optical network to modelled 
 All models must have at least one source of light, which can be added with the
-`scampy.Model.Model.add_component` method ::
+`strapy.Model.Model.add_component` method ::
 
-    model.add_component(scampy.components.Source, 'laser', 'n0')
+    model.add_component(strapy.components.Source, 'laser', 'n0')
 
 When adding a component, a unique name (in the above example `laser`) and the
 node, or nodes, to which the compoent is attached must be specified. In this
@@ -44,29 +44,29 @@ case the source has been connected to a node named `n0`. For components that
 connect to multiple nodes a tuple of node names should be specified, for example
 in the case of the beam splitter component in figure 1 ::
 
-    model.add_component(scampy.components.BeamSplitter, 'BS', ('n1', 'n2', 'n3', 'n4'))
+    model.add_component(strapy.components.BeamSplitter, 'BS', ('n1', 'n2', 'n3', 'n4'))
 
 Similarly, the other components can be added with ::
 
-    model.add_component(scampy.components.Mirror, 'Mmes', 'n5')
-    model.add_component(scampy.components.Mirror, 'Mref', 'n6')
-    model.add_component(scampy.components.Polariser, 'pol', ('n7', 'n8'))
+    model.add_component(strapy.components.Mirror, 'Mmes', 'n5')
+    model.add_component(strapy.components.Mirror, 'Mref', 'n6')
+    model.add_component(strapy.components.Polariser, 'pol', ('n7', 'n8'))
 
-All components in `scampy` must be linked together with transfer matrix
+All components in `strapy` must be linked together with transfer matrix
 components, in the majority of cases this linking component will be a
-`scampy.components.Stack`. For the interferometer in figure 1, the following
+`strapy.components.Stack`. For the interferometer in figure 1, the following
 stacks will link all components ::
 
-    model.add_component(scampy.components.Stack, 's01', ('n0', 'n1'))
-    model.add_component(scampy.components.Stack, 's35', ('n3', 'n5'))
-    model.add_component(scampy.components.Stack, 's26', ('n2', 'n6'))
-    model.add_component(scampy.components.Stack, 's47', ('n4', 'n7'))
-    model.add_component(scampy.components.Stack, 's89', ('n8', 'n9'))
+    model.add_component(strapy.components.Stack, 's01', ('n0', 'n1'))
+    model.add_component(strapy.components.Stack, 's35', ('n3', 'n5'))
+    model.add_component(strapy.components.Stack, 's26', ('n2', 'n6'))
+    model.add_component(strapy.components.Stack, 's47', ('n4', 'n7'))
+    model.add_component(strapy.components.Stack, 's89', ('n8', 'n9'))
 
 All free stack ends must be terminated with a beam dump, so that the network
 matrix equation is solvable. This can be added with :: 
 
-    model.add_component(scampy.components.Dump, 'd9', 'n9')
+    model.add_component(strapy.components.Dump, 'd9', 'n9')
 
 Finally, in order to read out optical properties from the model, a detector must
 be added. A detector can be added at any node and will not affect the modelled
@@ -75,18 +75,18 @@ case an amplitude and intensity detector will be added at node 9 ::
 
     model.add_detector('PD1', 'n9', ('amplitude', 'intensity'))
 
-As for the `scampy.Model.Model.add_component` method, when adding a detector a
+As for the `strapy.Model.Model.add_component` method, when adding a detector a
 unique name (`PD1`), and a node must be specified. In addition, the optical
 properties to be detected can be specified, by default the electric field
 ampltide vector with for the four S and P polarised counter propagating
 components is detected. For the available detector properties, see
-`scampy.Detector`.
+`strapy.Detector`.
 
 Once added to the model, the optical properties of individual components can be
 specified. In general, components should default to sensible properties for an
 'ideal' component, however explicitly specifying all properties should be
 preferred. Individual components are accessed through a python dictionary
-contained in the `scampy.Model.Model`, for this model properties will be specified as
+contained in the `strapy.Model.Model`, for this model properties will be specified as
 follows ::
 
     model.components['laser'].amplitude[0] = 0
@@ -123,11 +123,11 @@ or detectors are added to the model. ::
     model.build()
 
 The model is then ready for evaluation. Currently all optical path lengths are
-set to zero, the default for `scampy.components.Stack` instances, which should
+set to zero, the default for `strapy.components.Stack` instances, which should
 result in constructive interference at the detector. In order to see the
 interference fringes produced by this model, the length of the stack connecting
 node 3 to node 5 (leading to the moving measurement mirror) can be varied with
-the `scampy.components.Stack.set_length` method, and the results plotted with ::
+the `strapy.components.Stack.set_length` method, and the results plotted with ::
 
     xs = np.linspace(0, 1, 100)
     ints = np.empty(xs.shape, dtype=float)
@@ -151,7 +151,7 @@ is produced with a a period of half the optical wavelength.
     Figure 2: output of interferometer depicted in figure 1 for a displacement
     sweep of one wavelength.
 
-This demonstrates the basic usage of `scampy`, however as there is no possibility
+This demonstrates the basic usage of `strapy`, however as there is no possibility
 of optical cavity formation, the true utility of the software may not be clear.
 Cavity formation can be demonstrated by adding a partially reflecting mirror in
 the path between nodes 4 and 7, creating a pair of coupled weak Fabry-Perot
@@ -175,7 +175,7 @@ the centre can be created with ::
     pyctmm.set_d(stack, 2, 0)
 
 Stack 's47' can be set to the `pyctmm` stack with the
-`scampy.components.Stack.set_pyctmm` method ::
+`strapy.components.Stack.set_pyctmm` method ::
 
     model.components['s47'].set_pyctmm(stack)
 

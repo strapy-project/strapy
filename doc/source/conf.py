@@ -17,7 +17,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'scampy'
+project = 'strapy'
 #copyright = '2020'
 author = 'Angus Bridges'
 

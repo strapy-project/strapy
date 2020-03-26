@@ -1,5 +1,5 @@
 import unittest
-import scampy as ts
+import strapy as ts
 import numpy as np
 
 

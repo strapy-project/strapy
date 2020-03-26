@@ -1,5 +1,5 @@
 Detector
 =================================
 
-.. automodule:: scampy.Detector
+.. automodule:: strapy.Detector
    :members:

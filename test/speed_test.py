@@ -1,4 +1,4 @@
-import scampy as ts
+import strapy as ts
 import numpy as np
 from tabulate import tabulate
 

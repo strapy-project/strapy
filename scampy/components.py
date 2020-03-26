@@ -1,5 +1,5 @@
 """The components module holds all optical components currently defined in
-scampy. Each scampy optical component is defined in a separate class, and must
+strapy. Each strapy optical component is defined in a separate class, and must
 inherit at least from the `_Component` class, and optionally from the
 `_ScatterComponent` or `_TransferComponent` class.
 
@@ -157,7 +157,7 @@ class Source(_Component):
             Unique name of the component.
     nodes : str
             Node to which the component is attached.
-    model : scampy.Model()
+    model : strapy.Model()
             Model in which component is to be included.
     amplitude : list of complex
             Jones amplitude vector of the emitted light. Defaults to S
@@ -178,7 +178,7 @@ class Source(_Component):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(2, 1)
@@ -217,7 +217,7 @@ class BeamSplitter(_ScatterComponent):
             Unique name of the component.
     nodes : str
             Nodes to which the component is attached.
-    model : scampy.Model()
+    model : strapy.Model()
             Model in which component is to be included.
     rP : complex
             Ampltiude reflectivity coefficient for P polarised light.
@@ -244,7 +244,7 @@ class BeamSplitter(_ScatterComponent):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(8, 1)
@@ -323,7 +323,7 @@ class PolarisingBeamSplitter(_ScatterComponent):
             Unique name of the component.
     nodes : str
             Nodes to which the component is attached.
-    model : scampy.Model()
+    model : strapy.Model()
             Model in which component is to be included.
     rExtinction : double
             Polarisation extinction coefficient for the reflected beam. Defined
@@ -402,7 +402,7 @@ class PolarisingBeamSplitter(_ScatterComponent):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(8, 1)
@@ -582,7 +582,7 @@ class _TransferComponent(_Component):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(4, 1)
@@ -763,7 +763,7 @@ class FaradayRotator(_ScatterComponent):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(4, 1)
@@ -862,7 +862,7 @@ isolationCoefficient : double
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(4, 1)
@@ -975,7 +975,7 @@ class Reflector(_ScatterComponent):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(4, 1)
@@ -1083,7 +1083,7 @@ class Waveplate(_ScatterComponent):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(4, 1)
@@ -1199,7 +1199,7 @@ class Polariser(_ScatterComponent):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(4, 1)
@@ -1297,7 +1297,7 @@ class Mirror(_Component):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(2, 1)
@@ -1345,7 +1345,7 @@ class Dump(_Component):
 
         Parameters
         ----------
-        nodes : list of scampy.Node
+        nodes : list of strapy.Node
                 Nodes to which the component is attached.
         """
         lhs = sp.zeros(2, 1)
