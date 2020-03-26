@@ -5,7 +5,7 @@
 Introduction 
 ============
 
-`strapy` (SCAttering Matrix (model) PYthon) is python package implementing the combined transfer and scattering matrix
+`strapy` (Scattering TRAnsfer matrix model PYthon) is python package implementing the combined transfer and scattering matrix
 modelling approach described in [1], jointly developed by the `National
 Physical Laboratory <https://www.npl.co.uk/>`_ and the `Centre for Engineering
 Photonics at Cranfield University
