@@ -9,10 +9,10 @@ documentation (on `Windows <https://docs.python.org/3/using/windows.html>`_, or
 `Unix <https://docs.python.org/3/using/unix.html>`_ systems).
 
 `strapy` uses `numpy` and `scipy` for matrix mathematics, `sympy` for symbolic
-mathematics and `pyctmm` for transfer matrix modelling. If `strapy` is installed
+mathematics and `pyctmm <https://github.com/strapy-project/ctmm>`_ for transfer matrix modelling. If `strapy` is installed
 with pip with the exception of `pyctmm` these dependencies will be installed
 automatically. `pyctmm` must be installed before `strapy`, refer to the
-:code:`ctmm`/`pyctmm` documentation for installation instructions.
+`ctmm/pyctmm documentation <https://ctmm.readthedocs.io>`_ for installation instructions.
 
 Installation from source
 ------------------------
