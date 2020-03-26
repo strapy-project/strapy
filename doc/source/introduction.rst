@@ -16,6 +16,8 @@ leakage within the optics of homodyne displacement measuring interferometers,
 however `strapy` is generally applicable to modelling the propagation of
 monochromatic light through networks of planar optical components.
 
+As per the terms of the MIT licence, this software is provided "as is", without warranty of any kind. Please see the `licence file <https://github.com/strapy-project/strapy/blob/master/LICENSE>`_ for full details.
+
 [1] A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, awaiting publication.
 
 Citing strapy
