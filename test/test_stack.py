@@ -48,6 +48,12 @@ class TestStack(unittest.TestCase):
         self.assertAlmostEqual(model.detectors['out'].amplitudes[1],
                                np.exp(1j * 2 * np.pi * 0.634))
 
+        model.components['stack'].set_length(0, loss=0.5)
+
+        model.evaluate()
+
+        self.assertAlmostEqual(model.detectors['out'].intensity, 1)
+
     def test_set_pyctmm_free_space(self):
         """Test that the set_ctmm method produces the correct results.
 

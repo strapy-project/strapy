@@ -686,21 +686,25 @@ class Stack(_TransferComponent):
     def __init__(self, name, nodes, model):
         _TransferComponent.__init__(self, name, nodes, model)
 
-    def set_length(self, length):
+    def set_length(self, length, loss=0):
         """Sets stack transfer matrix to a single layer of thickness length,
-        in units of wavelength.
+        in units of wavelength. An intensity loss can also be included.
 
         Parameters
         ----------
         length : double
                 Optical thickness of stack in units of wavelength.
+        loss : double
+                Intensity loss for propagation through stack.
         """
         self.stack_matrix = np.identity(4, dtype=np.complex)
 
-        self.stack_matrix[0][0] = np.exp(1j * length * 2 * np.pi)
-        self.stack_matrix[1][1] = np.exp(-1j * length * 2 * np.pi)
-        self.stack_matrix[2][2] = np.exp(1j * length * 2 * np.pi)
-        self.stack_matrix[3][3] = np.exp(-1j * length * 2 * np.pi)
+        loss = 1 - loss
+
+        self.stack_matrix[0][0] = np.sqrt(loss)*np.exp(1j * length * 2 * np.pi)
+        self.stack_matrix[1][1] = np.sqrt(loss)*np.exp(-1j * length * 2 * np.pi)
+        self.stack_matrix[2][2] = np.sqrt(loss)*np.exp(1j * length * 2 * np.pi)
+        self.stack_matrix[3][3] = np.sqrt(loss)*np.exp(-1j * length * 2 * np.pi)
 
         self.model.updated.append(self.name)
 
