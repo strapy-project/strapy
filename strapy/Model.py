@@ -186,7 +186,7 @@ class Model:
         for i in range(networkMatrix.shape[0]):
             for j in range(networkMatrix.shape[1]):
                 # isinstance() is significantly faster than .equals(0)
-                if not(isinstance(networkMatrix[i, j], sp.numbers.Zero)):
+                if not(isinstance(networkMatrix[i, j], sp.core.numbers.Zero)):
                     if networkMatrix[i, j].is_constant():
                         self.matrix[i, j] = sp.N(networkMatrix[i, j])
                     else:
@@ -210,7 +210,7 @@ class Model:
         # Again, may be threadable.
         for i in range(len(rhsVector)):
             # isinstance() is significantly faster than .equals(0)
-            if not(isinstance(rhsVector[i], sp.numbers.Zero)):
+            if not(isinstance(rhsVector[i], sp.core.numbers.Zero)):
                 if rhsVector[i].is_constant():
                     self.rhs[i, j] = sp.N(rhsVector[i])
                 else:
