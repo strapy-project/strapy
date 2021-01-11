@@ -12,7 +12,7 @@ monochromatic light through networks of planar optical components.
 
 Full documentation is available at [strapy.readthedocs.io](https://strapy.readthedocs.io/)
 
-[1] A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, awaiting publication.
+[1] A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, Applied Optics **59**, 7694 (2020) [10.1364/AO.396922](https://doi.org/10.1364/AO.396922).
 
 # Citing strapy
 
