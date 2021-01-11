@@ -27,7 +27,7 @@ If you find an interesting application for `strapy` please let us know. If you
 want to cite results found using `strapy` please cite the accompanying
 publication and the software DOI:
 
-    * A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, Applied Optics **59**, 7694 (2020) `10.1364/AO.396922 <https://doi.org/10.1364/AO.396922>`.
+    * A. Bridges, A. Yacoot, T. Kissinger, R. P. Tatam, “Polarisation-sensitive transfer matrix modelling for displacement measuring interferometry”, Applied Optics **59**, 7694 (2020) `10.1364/AO.396922 <https://doi.org/10.1364/AO.396922>`_.
 
     * Cranfield University research data repository - `10.17862/cranfield.rd.12001236 <https://doi.org/10.17862/cranfield.rd.12001236>`_
 
